@@ -1,0 +1,362 @@
+{
+	"components": {
+		"examples": {},
+		"headers": {},
+		"parameters": {},
+		"requestBodies": {},
+		"responses": {},
+		"schemas": {
+			"SaveUpdateResADMIN": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"FirstName": {
+						"type": "string"
+					},
+					"LastName": {
+						"type": "string"
+					},
+					"Desgination": {
+						"type": "string"
+					},
+					"cell": {
+						"type": "string"
+					},
+					"JoinDate": {
+						"type": "string"
+					},
+					"adress": {
+						"type": "string"
+					},
+					"createdAt": {
+						"type": "string"
+					},
+					"updatedAt": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id",
+					"FirstName",
+					"LastName",
+					"Desgination",
+					"cell",
+					"JoinDate",
+					"adress",
+					"createdAt",
+					"updatedAt"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"GetAdmin": {
+				"properties": {
+					"id": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"id"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"SaveReqADMIN": {
+				"properties": {
+					"FirstName": {
+						"type": "string"
+					},
+					"LastName": {
+						"type": "string"
+					},
+					"Desgination": {
+						"type": "string"
+					},
+					"cell": {
+						"type": "string"
+					},
+					"JoinDate": {
+						"type": "string"
+					},
+					"adress": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"FirstName",
+					"LastName",
+					"Desgination",
+					"cell",
+					"JoinDate",
+					"adress"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"UpdateReqADMIN": {
+				"properties": {
+					"_id": {
+						"type": "string"
+					},
+					"FirstName": {
+						"type": "string"
+					},
+					"LastName": {
+						"type": "string"
+					},
+					"Desgination": {
+						"type": "string"
+					},
+					"cell": {
+						"type": "string"
+					},
+					"JoinDate": {
+						"type": "string"
+					},
+					"adress": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"_id",
+					"FirstName",
+					"LastName",
+					"Desgination",
+					"cell",
+					"JoinDate",
+					"adress"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"_LeanDocument__LeanDocument_T__": {
+				"properties": {},
+				"type": "object"
+			},
+			"Pick__LeanDocument_T_.Exclude_keyof_LeanDocument_T_.Exclude_keyofDocument._id-or-id-or-__v_-or-%24isSingleNested__": {
+				"properties": {
+					"_id": {
+						"$ref": "#/components/schemas/_LeanDocument__LeanDocument_T__",
+						"description": "This documents _id."
+					},
+					"__v": {
+						"description": "This documents __v."
+					},
+					"id": {
+						"description": "The string version of this documents _id."
+					}
+				},
+				"type": "object",
+				"description": "From T, pick a set of properties whose keys are in the union K"
+			},
+			"Omit__LeanDocument_this_.Exclude_keyofDocument._id-or-id-or-__v_-or-%24isSingleNested_": {
+				"$ref": "#/components/schemas/Pick__LeanDocument_T_.Exclude_keyof_LeanDocument_T_.Exclude_keyofDocument._id-or-id-or-__v_-or-%24isSingleNested__",
+				"description": "Construct a type with the properties of T except for those in type K."
+			},
+			"LeanDocument_this_": {
+				"$ref": "#/components/schemas/Omit__LeanDocument_this_.Exclude_keyofDocument._id-or-id-or-__v_-or-%24isSingleNested_"
+			},
+			"IADMIN": {
+				"$ref": "#/components/schemas/LeanDocument_this_"
+			},
+			"DeleteAdmin": {
+				"properties": {
+					"id": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"id"
+				],
+				"type": "object",
+				"additionalProperties": false
+			}
+		},
+		"securitySchemes": {}
+	},
+	"info": {
+		"title": "testapi",
+		"version": "1.0.0",
+		"license": {
+			"name": "ISC"
+		},
+		"contact": {}
+	},
+	"openapi": "3.0.0",
+	"paths": {
+		"/admin/getAdmin": {
+			"post": {
+				"operationId": "Getadmin",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/SaveUpdateResADMIN"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"admin"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/GetAdmin"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/admin/saveadmin": {
+			"post": {
+				"operationId": "Saveadmin",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/SaveUpdateResADMIN"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"admin"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/SaveReqADMIN"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/admin/updateadmin": {
+			"put": {
+				"operationId": "UpdateAdmin",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/SaveUpdateResADMIN"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"admin"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/UpdateReqADMIN"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/admin/deleteadmin": {
+			"delete": {
+				"operationId": "Deletadmin",
+				"responses": {
+					"200": {
+						"description": "Admin deleted",
+						"content": {
+							"application/json": {
+								"schema": {
+									"allOf": [
+										{
+											"$ref": "#/components/schemas/IADMIN"
+										},
+										{
+											"properties": {
+												"_id": {
+													"type": "string"
+												}
+											},
+											"required": [
+												"_id"
+											],
+											"type": "object"
+										}
+									]
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"admin"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/DeleteAdmin"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/admin/getadminlist": {
+			"post": {
+				"operationId": "GetadminList",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"items": {
+										"$ref": "#/components/schemas/SaveUpdateResADMIN"
+									},
+									"type": "array"
+								}
+							}
+						}
+					}
+				},
+				"tags": [
+					"admin"
+				],
+				"security": [],
+				"parameters": []
+			}
+		}
+	},
+	"servers": [
+		{
+			"url": "/"
+		}
+	]
+}
